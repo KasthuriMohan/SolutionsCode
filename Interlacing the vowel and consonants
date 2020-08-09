@@ -1,0 +1,54 @@
+/*** This is the java program for interlace the vowel and consonant..
+
+     1. The program must accept a string s containing only alphabets as the input.
+     2. The program must print all the vowels in the string in the order of their occurrence interlaced with all the consonants in the string in 
+        the reverse order of ther occurrence as the output. 
+
+ input: heaven
+ output: nevaeh
+ 
+ input:AEIOU
+ output: AEIOU
+
+*/
+
+
+
+import java.util.*;
+public class InterlaceVC {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        String a=s.next(),v="",c="";
+        int i;
+        for(i=0;i<a.length();i++){
+            if(a.charAt(i)=='a'||a.charAt(i)=='e'||a.charAt(i)=='i'||a.charAt(i)=='o'||a.charAt(i)=='u'||a.charAt(i)=='A'||a.charAt(i)=='E'||a.charAt(i)=='I'||a.charAt(i)=='O'||a.charAt(i)=='U'){
+                v+=a.charAt(i);
+            }
+            else{
+                c+=a.charAt(i);
+            }
+        }
+        StringBuilder str=new StringBuilder(c);
+        str.reverse();
+        if(str.length()==0){
+            System.out.print(v);
+        }
+        else if(v.length()==0){
+            System.out.print(str);
+        }
+        else if(v.length()<=str.length()){
+            for(i=0;i<v.length();i++){
+                System.out.print(v.charAt(i));
+                System.out.print(str.charAt(i));
+            }
+            System.out.print(str.substring(i,str.length()));
+        }
+        else if(str.length()<=v.length()){
+            for(i=0;i<str.length();i++){
+                System.out.print(v.charAt(i));
+                System.out.print(str.charAt(i));
+            }
+            System.out.print(v.substring(i,v.length()));
+        }
+    }
+}
