@@ -1,0 +1,74 @@
+/*** The Program must accept rxc matrix and should print "YES" if all the rows and columns are palindrome else it must print "NO".
+
+input1:
+4 4
+1 2 2 1
+2 3 3 2
+2 3 3 2
+1 2 2 1
+output: YES
+input2:
+3 5
+2 4 3 4 2
+3 7 8 7 3
+5 6 1 6 5
+output: NO
+input3:
+5 4
+67 77 77 67
+48 74 74 48
+53 95 95 53
+48 74 74 48
+67 77 77 67
+output: YES
+**/
+
+
+
+import java.util.*;
+public class MatrixPalin {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int r=s.nextInt(),c=s.nextInt(),i,j,co=0;
+        int a[][]=new int[r][c];
+        for(i=0;i<r;i++){
+            for(j=0;j<c;j++){
+                a[i][j]=s.nextInt();
+            }
+        }
+        List<Integer> l1=new ArrayList<Integer>();
+        List<Integer> l1r=new ArrayList<Integer>();
+        List<Integer> l2=new ArrayList<Integer>();
+        List<Integer> l2r=new ArrayList<Integer>();
+        for(i=0;i<r;i++){
+            for(j=0;j<c;j++){
+                l1.add(a[i][j]);
+                l1r.add(a[i][j]);
+            }
+            Collections.reverse(l1r);
+            if(l1.equals(l1r)){
+                co++;
+            }
+            l1.clear();
+            l1r.clear();
+        }
+        for(i=0;i<c;i++){
+            for(j=0;j<r;j++){
+                l2.add(a[j][i]);
+                l2r.add(a[j][i]);
+            }
+            Collections.reverse(l2r);
+            if(l2.equals(l2r)){
+                co++;
+            }
+            l2.clear();
+            l2r.clear();
+        }
+        if(co==r+c){
+            System.out.print("YES");
+        }
+        else{
+            System.out.print("NO");
+        }
+    }
+}
