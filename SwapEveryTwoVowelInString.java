@@ -29,3 +29,25 @@ public class SwapEveryTwoVowelInString{
 		}
 	}
 }
+
+
+/**
+*
+
+THE VOWEL CHARACTER PRESENT IN STRING NEED TO SWAP WITH ANOTHER VOWEL CHARACTER, IF THE VOWELS COUNT IN STRING IS ODD MEANS THE LAST
+VOWEL CHARACTER REMAIN SAME..
+
+
+Input: Environment
+
+Output: invErenmont
+
+Input2: TOUCHPAD
+
+Output2: TUOCHPAD
+
+*
+*
+*
+**
+*/
